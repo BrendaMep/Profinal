@@ -40,6 +40,78 @@ var locations = {
 	'vega': {
 		'titulo': 'Vega de Alatorre',
 		'coordenadas': [20.03034, -96.65044]
+	},
+	'vega': {
+		'titulo': 'Vega de Alatorre',
+		'coordenadas': [20.03034, -96.65044]
+	},
+	'acayucan': {
+		'titulo': 'Acayucan',
+		'coordenadas': [17.94919, -94.91459]
+	},
+	'coatzacualcos': {
+		'titulo': 'Coatzacualcos',
+		'coordenadas': [18.13447, -94.45898]
+	},
+	' agua': {
+		'titulo': 'Agua Dulce',
+		'coordenadas': [18.14259, -94.1436]
+	},
+	' huautla': {
+		'titulo': 'Huautla de Jiménez',
+		'coordenadas': [18.13108, -96.84314]
+	},
+	'fortin ': {
+		'titulo': 'Fortin de las Flores ',
+		'coordenadas': [18.9017, -96.99896]
+	},
+	' huatusco': {
+		'titulo': ' Huatusco',
+		'coordenadas': [19.14823, -96.96654]
+	},
+	' joachin': {
+		'titulo': ' Joachin',
+		'coordenadas': [18.6407, -96.23095]
+	},
+	' minatitlan': {
+		'titulo': ' Minatitlan',
+		'coordenadas': [17.99392, -94.5466]
+	},
+	'nigro ': {
+		'titulo': ' El Nigromante',
+		'coordenadas': [17.76323, -95.75574]
+	},
+	' otatitlan': {
+		'titulo': ' Otatitlan',
+		'coordenadas': [18.18106, -96.03439]
+	},
+	' papantla': {
+		'titulo': ' Papantla',
+		'coordenadas': [20.45667, -97.31561]
+	},
+	'tuxtla ': {
+		'titulo': ' San Andres Tuxtla',
+		'coordenadas': [18.44412, -95.21302]
+	},
+	' tecolutla': {
+		'titulo': ' Tecolutla',
+		'coordenadas': [20.47955, -97.01012]
+	},
+	' teziutlan': {
+		'titulo': ' Teziutlan',
+		'coordenadas': [19.81601, -97.35705]
+	},
+	' alvarado': {
+		'titulo': ' Alvarado',
+		'coordenadas': [18.76961, -95.75894]
+	},
+	' yanga': {
+		'titulo': ' Yanga',
+		'coordenadas': [18.82928, -96.80027]
+	},
+	' boca': {
+		'titulo': ' Boca del Rio',
+		'coordenadas': [19.10627, -96.10632]
 	}
 };
 
