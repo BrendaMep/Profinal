@@ -1,5 +1,4 @@
 # las ciudades que estan a los lados
-
 A = 'acayucan'
 B = 'boca del rio'
 C = 'coatzacualco'
@@ -32,4 +31,4 @@ print(len(mapa))
 
 for i in range(20):
     for j in range(len(mapa[i])):
-        print(mapa[i][j])
+        print(ciudades[i] ,mapa[i][j])

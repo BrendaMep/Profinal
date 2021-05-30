@@ -1,6 +1,6 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QHBoxLayout, QVBoxLayout, QFormLayout, QLabel, \
-    QLineEdit, QSlider, QDial, QDoubleSpinBox, QPushButton, QSizePolicy
+    QLineEdit, QSlider, QComboBox, QDoubleSpinBox, QPushButton, QSizePolicy
 from matplotlib.backends.backend_qt5agg import (FigureCanvasQTAgg as FigureCanvas)
 from scipy.integrate import odeint
 import numpy as np
@@ -20,10 +20,10 @@ class ProjectWindow(QMainWindow):
         self.lyt_destino = QFormLayout()
 
 
-        self.lbl_inicio = QLabel()  # para x0
+        self.lbl_inicio = QComboBox()  # para x0
         self.lnedt_inicio = QLineEdit()
 
-        self.lbl_destino = QLabel()  # para y0
+        self.lbl_destino = QComboBox()  # para y0
         self.lnedt_destino = QLineEdit()
 
         self.setup_ui()
