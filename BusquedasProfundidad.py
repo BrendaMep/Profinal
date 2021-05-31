@@ -1,7 +1,7 @@
 # las ciudades que estan a los lados
 A = 'acayucan'
 B = 'boca del rio'
-C = 'coatzacualco'
+C = 'coatzacoalcos'
 D = 'agua dulce'
 E = 'jimenez'
 F = 'Flores'
@@ -20,9 +20,9 @@ L = 'xalapa'
 R = 'yanga'
 Z = 'zempoala'
 
-ciudades = [A,B,C,D,E,F,G,H,I,L,M,N,O,P,R,S,T,U,V,Z]
-mapa = [[Z, T,S],[F,P,G,U],[D, P,R],[M,C],[H],[S,B],[B],[U,E],[N,V],[T,M],[L,D],
-        [I],[Z,S],[R,C,B],[S,C,P],[A,O,F,R],[A,L],[B,V,H],[U,I],[O,A]]
+ciudades = [A, B, C, D, E, F, G, H, I, L, M, N, O, P, R, S, T, U, V, Z]
+mapa = [[Z, T, S], [F, P, G, U], [D, P, R], [M, C], [H], [S, B], [B], [U, E], [N, V], [T, M], [L, D],
+        [I], [Z, S], [R, C, B], [S, C, P], [A, O, F, R], [A, L], [B, V, H], [U, I], [O, A]]
 
 #for i in range(20):
  #   for j in range(len(mapa[i])):
