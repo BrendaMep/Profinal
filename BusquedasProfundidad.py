@@ -34,7 +34,8 @@ def profundidad(mapa, inicio, destino):
     recorrido = [[inicio, None]]
     ciudad = list()
     while len(arbol) != 0:
-        ciudad.append(arbol[0])
+        x = len(arbol)
+        ciudad.append(arbol[x-1])
         arbol.remove(inicio)
         if ciudad == destino:
             return
@@ -47,9 +48,7 @@ def profundidad(mapa, inicio, destino):
                 break
         print(arbol)
         print(recorrido)
-        for m in range(len(recorrido)):
-            ciudad = recorrido[len(recorrido)-1][0]
-            break
+        print(ciudad)
         break
 
-print(profundidad(mapa, A,B))
+print(profundidad(mapa,A,B))
