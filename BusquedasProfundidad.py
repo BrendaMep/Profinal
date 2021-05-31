@@ -44,23 +44,12 @@ def profundidad(mapa, inicio, destino):
                     if j not in recorrido:
                         arbol.append(j)
                         recorrido.append([j, ciudad])
-                print(recorrido)
                 break
+        print(arbol)
+        print(recorrido)
         for m in range(len(recorrido)):
-            ciudad = recorrido[len(recorrido)-1]
+            ciudad = recorrido[len(recorrido)-1][0]
             break
         break
 
-#print(profundidad(mapa, A,B))
-
-for i in range(20):
-    if A == ciudades[i]:
-        for j in mapa[i]:
-            print(j)
-        break
-    break
-recorrido = [[A, None]]
-recorrido.append([Z,A])
-print(type(recorrido))
-print(len(recorrido))
-print(recorrido)
+print(profundidad(mapa, A,B))
