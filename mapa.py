@@ -1,29 +1,31 @@
 # las ciudades que estan a los lados
-A = 'acayucan'
-B = 'boca del rio'
-C = 'coatzacualco'
-D = 'agua dulce'
-E = 'jimenez'
-F = 'Flores'
-G = 'vega de la torre'
-H = 'huatusco'
-J = 'joachin'
-M = 'minatitlan'
-N = 'nigromante'
-O = 'otatitlan'
-P = 'papantla'
-S = 'san andres'
-T = 'tecolutla'
-U = 'teuxitlan'
-V = 'alvarado'
-X = 'xalapa'
-Y = 'yanga'
-Z = 'zempoala'
+A = 'Acayucan'
+B = 'Boca del Rio'
+C = 'Coatzacualcos'
+D = 'Agua Dulce'
+E = 'Huautla de Jimenez'
+F = 'Fortin Flores'
+G = 'Vega de Alatorre'
+H = 'Huatusco'
+J = 'Joachin'
+M = 'Minatitlan'
+N = 'Nigromante'
+O = 'Otatitlan'
+P = 'Papantla'
+S = 'San Andres Tuxtla'
+T = 'Tecolutla'
+U = 'Teziutlan'
+V = 'Alvarado'
+X = 'Xalapa'
+Y = 'Yanga'
+Z = 'Zempoala'
 
 # ciudades vecinas de cada una de las ciudades
 ciudades = [A,B,C,D,E,F,G,H,J,M,N,O,P,S,T,U,V,X,Y,Z]
-mapa = [[M, N, S],[J, V, X, Z],[D, M, S],[C],[F,O],[E,H,Y],[P,T,X,Z],[F,X],[B,O,Y],[A,C],
-        [A,O],[E,N,V],[G,T,U],[A,C,V],[G,P],[P,X],[B,O,S],[B,G,H,U,Z],[F,J],[B,G,X]]
+mapa = [[M, S, N], [Z, V, J, X], [M, D, S], [C], [O, F], [Y, H, E], [T, P, Z, X], [F, X],
+        [Y, B, O], [C, A], [O,A], [J, N, V, E], [T, G, U], [V, A, C], [G, P], [X, P],
+        [B, S, O], [Z, U, B, H, G], [F, J], [B, X, G]]
+
 print(len(mapa))
 
 

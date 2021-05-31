@@ -38,14 +38,16 @@ def profundidad(mapa, inicio, destino):
         arbol.remove(inicio)
         if ciudad == destino:
             return
-
         for i in range(20):
             if inicio == ciudades[i]:
                 for j in mapa[i]:
                     if j not in recorrido:
                         arbol.append(j)
                         recorrido.append([j, ciudad])
+                print(recorrido)
                 break
+        for m in range(len(recorrido)):
+            ciudad = recorrido[len(recorrido)-1]
             break
         break
 
@@ -57,3 +59,8 @@ for i in range(20):
             print(j)
         break
     break
+recorrido = [[A, None]]
+recorrido.append([Z,A])
+print(type(recorrido))
+print(len(recorrido))
+print(recorrido)
