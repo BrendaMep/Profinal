@@ -1,29 +1,31 @@
 # las ciudades que estan a los lados
-A = 'acayucan'
-B = 'boca del rio'
-C = 'coatzacoalcos'
-D = 'agua dulce'
-E = 'jimenez'
-F = 'Flores'
-G = 'vega de la torre'
-H = 'huatusco'
-I = 'joachin'
-M = 'minatitlan'
-N = 'nigromante'
-O = 'otatitlan'
-P = 'papantla'
-S = 'san andres'
-T = 'tecolutla'
-U = 'teuxitlan'
-V = 'alvarado'
-L = 'xalapa'
-R = 'yanga'
-Z = 'zempoala'
+A = 'Acayucan'
+B = 'Boca del Rio'
+C = 'Coatzacualcos'
+D = 'Agua Dulce'
+E = 'Huautla de Jimenez'
+F = 'Fortin Flores'
+G = 'Vega de Alatorre'
+H = 'Huatusco'
+J = 'Joachin'
+M = 'Minatitlan'
+N = 'Nigromante'
+O = 'Otatitlan'
+P = 'Papantla'
+S = 'San Andres Tuxtla'
+T = 'Tecolutla'
+U = 'Teziutlan'
+V = 'Alvarado'
+X = 'Xalapa'
+Y = 'Yanga'
+Z = 'Zempoala'
 
-ciudades = [A, B, C, D, E, F, G, H, I, L, M, N, O, P, R, S, T, U, V, Z]
-mapa = [[Z, T, S], [F, P, G, U], [D, P, R], [M, C], [H], [S, B], [B], [U, E], [N, V], [T, M], [L, D],
-        [I], [Z, S], [R, C, B], [S, C, P], [A, O, F, R], [A, L], [B, V, H], [U, I], [O, A]]
-
+# ciudades vecinas de cada una de las ciudades
+ciudades= [A, B, C, D, E, F, G, H, J, M, N, O, P, S, T, U, V, X, Y, Z]
+mapa_ej = [[M, S, N], [Z, V, J, X], [M, D, S], [C], [O, F], [Y, H, E], [T, P, Z, X], [F, X],
+           [Y, B, O], [C, A], [O, A], [J, N, V, E], [T, G, U], [V, A, C], [G, P], [X, P],
+           [B, S, O], [Z, U, B, H, G], [F, J], [B, X, G]]
+#print(mapa_ej[7])
 
 def ruta(recor):
     x = len(recor)
@@ -39,28 +41,32 @@ def ruta(recor):
                     rut.append(recor[i][1])
                     break
         m = m+1
+    rut.reverse()
     return rut
 
 
 def profundidad(mapa, inicio, destino):
-    arbol = list()
-    recorrido = list()
+    arbol = []
+    recorrido = []
     arbol.append(inicio)
     recorrido.append([inicio, None])
-    x = len(arbol)
-    while x != 0:
-        ciudad = arbol[x-1]
-        arbol.remove(ciudad)
+    while len(arbol) != 0:
+        ciudad = arbol[len(arbol) - 1]
+        #print(ciudad)
+        #print(arbol)
+        arbol.remove(arbol[len(arbol)-1])
         if ciudad == destino:
-            print(ruta(recorrido))
-            return
+            #print(recorrido)
+            ru = ruta(recorrido)
+            return ru
         else:
             vecinos = mapa[ciudades.index(ciudad)]
             for vecino in vecinos:
-                if vecino is not recorrido:
+                acceso = 0
+                for ndo in recorrido:
+                    if (vecino == ndo[0] or vecino == ndo[1]):
+                        acceso += 1
+                if acceso == 0:
                     arbol.append(vecino)
-                    recorrido.append([vecino,ciudad])
-        x = x+1
-
-
-print(profundidad(mapa,A,B))
+                    recorrido.append([vecino, ciudad])
+print(profundidad(mapa_ej,A,B))
