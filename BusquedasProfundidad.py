@@ -24,21 +24,29 @@ ciudades = [A, B, C, D, E, F, G, H, I, L, M, N, O, P, R, S, T, U, V, Z]
 mapa = [[Z, T, S], [F, P, G, U], [D, P, R], [M, C], [H], [S, B], [B], [U, E], [N, V], [T, M], [L, D],
         [I], [Z, S], [R, C, B], [S, C, P], [A, O, F, R], [A, L], [B, V, H], [U, I], [O, A]]
 
-#for i in range(20):
- #   for j in range(len(mapa[i])):
-  #      print(ciudades[i] ,mapa[i][j])
+def ruta(recor):
+    x = len(recor)
+    rut = []
+    rut.append(recor[x-1][0])
+    rut.append(recor[x-1][1])
+    for j in range(len(rut)):
+        for i in range(x):
+            if rut[j] == recor[i][0]:
+                rut.append(recor[i][1])
+    rut = list(set(rut))
+    rut.reverse()
+
 
 def profundidad(mapa, inicio, destino):
     arbol = list()
     arbol.append(inicio)
     recorrido = [[inicio, None]]
-    ciudad = list()
     while len(arbol) != 0:
         x = len(arbol)
-        ciudad.append(arbol[x-1])
-        arbol.remove(inicio)
+        ciudad = arbol[x-1]
+        arbol.remove(ciudad)
         if ciudad == destino:
-            return
+            return ruta(recorrido)
         for i in range(20):
             if inicio == ciudades[i]:
                 for j in mapa[i]:
@@ -49,6 +57,8 @@ def profundidad(mapa, inicio, destino):
         print(arbol)
         print(recorrido)
         print(ciudad)
+        print(len(recorrido))
+        #arbol = arbol
         break
 
 print(profundidad(mapa,A,B))
