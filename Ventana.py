@@ -4,7 +4,6 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QHBoxLayout, QVB
 from matplotlib.backends.backend_qt5agg import (FigureCanvasQTAgg as FigureCanvas)
 from scipy.integrate import odeint
 import numpy as np
-from sklearn import tree
 
 class ProjectWindow(QMainWindow):
 
