@@ -20,31 +20,32 @@ Y = 'Yanga'
 Z = 'Zempoala'
 
 mapa = {
-    'A': ['Z', 'T', 'S'],
-    'B': ['F', 'P', 'G', 'U'],
-    'C': ['D', 'P', 'R'],
-    'D': ['M', 'C'],
-    'E': ['H'],
-    'F': ['S', 'B'],
-    'G': ['B'],
-    'H': ['U', 'E'],
-    'I': ['N', 'V'],
-    'L': ['T', 'M'],
-    'M': ['L', 'D'],
-    'N': ['I'],
-    'O': ['Z', 'S'],
-    'P': ['R', 'C', 'B'],
-    'R': ['S', 'C', 'P'],
-    'S': ['A', 'O', 'F', 'R'],
-    'T': ['A', 'L'],
-    'U': ['B', 'V', 'H'],
-    'V': ['U', 'I'],
-    'Z': ['O', 'A']
+    'A': ['M', 'S', 'N'],
+    'B': ['Z', 'V', 'J', 'X'],
+    'C': ['M', 'D', 'S'],
+    'D': ['C'],
+    'E': ['O', 'F'],
+    'F': ['Y', 'H', 'E'],
+    'G': ['T', 'P', 'Z', 'X'],
+    'H': ['F', 'X'],
+    'J': ['Y', 'B', 'O'],
+    'M': ['C', 'A'],
+    'N': ['O', 'A'],
+    'O': ['J', 'N', 'V', 'E'],
+    'P': ['T', 'G', 'U'],
+    'S': ['V', 'A', 'C'],
+    'T': ['G', 'P'],
+    'U': ['X', 'P'],
+    'V': ['B', 'S', 'O'],
+    'X': ['Z', 'U', 'B', 'H', 'G'],
+    'Y': ['F', 'J'],
+    'Z': ['B', 'X', 'G']
 }
 
 
 def costo(mapa, inicio, final):
     ruta = []
+    ciclo = 0
     while inicio != final:
         vecinos = mapa[inicio]
         ruta.append(inicio)
@@ -57,7 +58,17 @@ def costo(mapa, inicio, final):
             for ciudad in vecinos:
                 if ciudad not in ruta:
                     vecinos2.append(ciudad)
-            inicio = vecinos2[0]
+            if len(vecinos2) != 0:
+                inicio = vecinos2[0]
+            else:
+                inicio = ruta[len(ruta) - 1]
+                ruta.remove(inicio)
+                for ciudades in mapa:
+                    if inicio in mapa[ciudades]:
+                        mapa[ciudades].remove(inicio)
+                del mapa[inicio]
+                inicio = ruta[len(ruta) -1]
+                ruta.remove(inicio)
 
 
 
