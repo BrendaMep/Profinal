@@ -19,7 +19,7 @@ X = 'Xalapa'
 Y = 'Yanga'
 Z = 'Zempoala'
 
-mapa = {
+mapa1 = {
     'A': ['M', 'S', 'N'],
     'B': ['Z', 'V', 'J', 'X'],
     'C': ['M', 'D', 'S'],
@@ -69,6 +69,7 @@ def costo(mapa, inicio, final):
                 del mapa[inicio]
                 inicio = ruta[len(ruta) -1]
                 ruta.remove(inicio)
-
+X = costo(mapa1, A,B)
+print(X)
 
 

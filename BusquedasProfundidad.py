@@ -40,6 +40,7 @@ def ruta(recor):
                     rut.append(recor[i][1])
                     break
         m = m+1
+    rut.remove(None)
     rut.reverse()
     return rut
 
@@ -70,4 +71,4 @@ def profundidad(mapa, inicio, destino):
                     if acceso == 0:
                         arbol.append(vecino)
                         recorrido.append([vecino, ciudad])
-#print(profundidad(mapa,A,X))
+#print(profundidad(mapa,A,C))
