@@ -44,6 +44,7 @@ class ProjectWindow(QMainWindow):
 
         self.lbl_sigma.setText('Salida')
         self.lbl_sigma.setFixedWidth(50)
+        self.sld_sigma.addItem("aca")
         #self.lbl_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
         #self.sld_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
@@ -52,9 +53,9 @@ class ProjectWindow(QMainWindow):
         # self.lbl_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
         # self.sld_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
-        descripcion1 = QLabel("Rapida, es la ruta mas corta de llegar al destino")
-        descripcion2 = QLabel("Bajo, es la ruta con menos costo")
-        descripcion3 = QLabel("Larga, es la ruta mas grande")
+        descripcion1 = QLabel("Rapida, es la ruta mas corta de llegar al destino.")
+        descripcion2 = QLabel("Bajo, es la ruta con menos costo.")
+        descripcion3 = QLabel("Larga, es la ruta donde viajaras por mas ciudades.")
 
         self.lbl_beta.setText('Modo de viaje')
         self.lbl_beta.setFixedWidth(110)
@@ -77,6 +78,10 @@ class ProjectWindow(QMainWindow):
         self.lyt_settings.addWidget(self.lbl_rho)
         self.lyt_rho.addRow(self.sld_rho)   #, self.lnedt_rho)
         self.lyt_settings.addLayout(self.lyt_rho)
+
+        self.lyt_settings.addWidget(descripcion1)
+        self.lyt_settings.addWidget(descripcion2)
+        self.lyt_settings.addWidget(descripcion3)
 
         self.lyt_settings.addWidget(self.lbl_beta)
         self.lyt_beta.addRow(self.sld_beta)    #, self.lnedt_beta)
