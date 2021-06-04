@@ -1,6 +1,8 @@
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QHBoxLayout, QVBoxLayout, QFormLayout, QLabel, \
-    QLineEdit, QSlider, QDial, QDoubleSpinBox, QPushButton, QSizePolicy, QComboBox
+import sys
+from PyQt5.QtWidgets import *
+from PyQt5.QtWebEngineWidgets import *
+from PyQt5.QtCore import *
+import os
 
 lista = ['Acayucan','Boca del Rio','Coatzacualcos','Agua Dulce','Huautla de Jimenez','Fortin Flores',
          'Vega de Alatorre','Huatusco','Joachin','Minatitlan','Nigromante','Otatitlan','Papantla',
@@ -14,6 +16,7 @@ class ProjectWindow(QMainWindow):
         self.container = QWidget()
 
         self.main_layout = QHBoxLayout()
+
         self.lyt_settings = QVBoxLayout()
         self.lyt_graph = QHBoxLayout()
 
@@ -59,6 +62,15 @@ class ProjectWindow(QMainWindow):
         descripcion1 = QLabel("Rapida, es la ruta mas corta de llegar al destino.")
         descripcion2 = QLabel("Bajo, es la ruta con menos costo.")
         descripcion3 = QLabel("Larga, es la ruta donde viajaras por mas ciudades.")
+
+
+        #mapa de html
+        self.html_view = QWebEngineView()
+        self.lyt_graph.addWidget(self.html_view)
+
+        self.html_view.load(QUrl.fromLocalFile(os.path.abspath('index.html')))
+
+
 
         self.lbl_modo.setText('Modo de viaje')
         self.lbl_modo.setFixedWidth(110)
