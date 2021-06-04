@@ -24,6 +24,11 @@ var papantlaIcon = L.icon({
 	iconSize: [18, 31],
 });
 
+var zempoIcon = L.icon({
+	iconUrl: 'images/zempoala.png',
+	iconSize: [18, 31],
+});
+
 /*function creaIcono(ruta, width, height) {
 	var icono = L.icon({
 		iconUrl: ruta,
@@ -40,7 +45,8 @@ var locations = {
 	},
 	'zempoala': {
 		'titulo': 'Zempoala',
-		'coordenadas': [19.44688, -96.40507]
+		'coordenadas': [19.44688, -96.40507],
+		'icon': zempoIcon
 	},
 	'vega': {
 		'titulo': 'Vega de Alatorre',
