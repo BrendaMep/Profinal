@@ -97,7 +97,9 @@ class ProjectWindow(QMainWindow):
 
         self.setCentralWidget(self.container)
 
-
+        def f(self, condition, t):
+            inicio = self.lbl_sigma.Text()
+            salida = self.lbl_rho.Text()
 if __name__ == '__main__':
     app = QApplication([])
     window = ProjectWindow()

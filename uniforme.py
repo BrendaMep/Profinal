@@ -1,17 +1,17 @@
 A = 'Acayucan'
-B = 'Boca del Rio'
+B = 'Boca'
 C = 'Coatzacualcos'
-D = 'Agua Dulce'
-E = 'Huautla de Jimenez'
-F = 'Fortin Flores'
-G = 'Vega de Alatorre'
+D = 'Agua'
+E = 'Huautla'
+F = 'Fortin'
+G = 'Vega'
 H = 'Huatusco'
 J = 'Joachin'
 M = 'Minatitlan'
 N = 'Nigromante'
 O = 'Otatitlan'
 P = 'Papantla'
-S = 'San Andres Tuxtla'
+S = 'Tuxtla'
 T = 'Tecolutla'
 U = 'Teziutlan'
 V = 'Alvarado'
@@ -66,9 +66,8 @@ def costo(mapa, inicio, final):
                     if inicio in mapa[ciudades]:
                         mapa[ciudades].remove(inicio)
                 del mapa[inicio]
-                inicio = ruta[len(ruta) -1]
+                inicio = ruta[len(ruta) - 1]
                 ruta.remove(inicio)
-
 
 
 
