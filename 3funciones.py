@@ -1,7 +1,7 @@
 from amplitud import fcn_amplitud
-#from uniforme import costo
+from uniforme import costo
 from BusquedasProfundidad import profundidad
-#from uniforme import mapa1
+from uniforme import mapa1
 from mapa2 import mapa
 from mapa2 import ciudades
 # las ciudades que estan a los lados
@@ -26,6 +26,6 @@ X = 'Xalapa'
 Y = 'Yanga'
 Z = 'Zempoala'
 
-print(fcn_amplitud(ciudades,mapa,A,B))
-#print(costo(mapa1,'A','B'))
-print(profundidad(mapa,A,B))
+print(fcn_amplitud(ciudades,mapa,'Acayucan',B))
+print(costo(mapa1,'A','B'))
+print(profundidad(mapa,'Acayucan',B))

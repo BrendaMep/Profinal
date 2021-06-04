@@ -46,15 +46,15 @@ class ProjectWindow(QMainWindow):
         self.lbl_salida.setFixedWidth(50)
         for i in lista:
             self.sld_salida.addItem(i)
-        #self.lbl_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
-        #self.sld_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        self.lbl_salida.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        self.sld_salida.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
         self.lbl_destino.setText('Destino')
         self.lbl_destino.setFixedWidth(65)
         for i in lista:
             self.sld_destino.addItem(i)
-        # self.lbl_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
-        # self.sld_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        self.lbl_destino.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        self.sld_destino.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
         descripcion1 = QLabel("Rapida, es la ruta mas corta de llegar al destino.")
         descripcion2 = QLabel("Bajo, es la ruta con menos costo.")
@@ -64,11 +64,13 @@ class ProjectWindow(QMainWindow):
         self.lbl_modo.setFixedWidth(110)
         for i in lista2:
             self.sld_modo.addItem(i)
-        # self.lbl_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
-        # self.sld_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        self.lbl_modo.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        self.sld_modo.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
         self.btn_graph.setText('Trazar ruta')
         self.btn_graph.setFixedWidth(105)
+
+        #viaje = QLabel(" 1111")
 
         self.main_layout.addLayout(self.lyt_settings) # objetos que conforman la interfaz
         self.main_layout.addLayout(self.lyt_graph)
@@ -93,6 +95,8 @@ class ProjectWindow(QMainWindow):
         self.lyt_settings.addLayout(self.lyt_modo)
 
         self.lyt_settings.addWidget(self.btn_graph)
+
+        #self.lyt_settings.addWidget(viaje)
 
         self.setCentralWidget(self.container)
 
