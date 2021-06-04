@@ -18,24 +18,23 @@ class ProjectWindow(QMainWindow):
         self.lyt_graph = QHBoxLayout()
 
 
-        self.lyt_sigma = QFormLayout()
-        self.lyt_rho = QFormLayout()
-        self.lyt_beta = QFormLayout()
+        self.lyt_salida = QFormLayout()
+        self.lyt_destino = QFormLayout()
+        self.lyt_modo = QFormLayout()
 
-        self.lbl_sigma = QLabel()
-        self.sld_sigma = QComboBox()
+        self.lbl_salida = QLabel()
+        self.sld_salida = QComboBox()
         #self.lnedt_sigma = QLineEdit()
 
-        self.lbl_rho = QLabel()
-        self.sld_rho = QComboBox()
+        self.lbl_destino = QLabel()
+        self.sld_destino = QComboBox()
         #self.lnedt_rho = QLineEdit()
 
-        self.lbl_beta = QLabel()
-        self.sld_beta = QComboBox()
+        self.lbl_modo = QLabel()
+        self.sld_modo = QComboBox()
         #self.lnedt_beta = QLineEdit()
 
         self.btn_graph = QPushButton()
-
 
         self.setup_ui()
 
@@ -43,17 +42,17 @@ class ProjectWindow(QMainWindow):
         self.setWindowTitle('Viaje')
         mensaje = QLabel("Bienvenido")
 
-        self.lbl_sigma.setText('Salida')
-        self.lbl_sigma.setFixedWidth(50)
+        self.lbl_salida.setText('Salida')
+        self.lbl_salida.setFixedWidth(50)
         for i in lista:
-            self.sld_sigma.addItem(i)
+            self.sld_salida.addItem(i)
         #self.lbl_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
         #self.sld_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
-        self.lbl_rho.setText('Destino')
-        self.lbl_rho.setFixedWidth(65)
+        self.lbl_destino.setText('Destino')
+        self.lbl_destino.setFixedWidth(65)
         for i in lista:
-            self.sld_rho.addItem(i)
+            self.sld_destino.addItem(i)
         # self.lbl_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
         # self.sld_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
@@ -61,10 +60,10 @@ class ProjectWindow(QMainWindow):
         descripcion2 = QLabel("Bajo, es la ruta con menos costo.")
         descripcion3 = QLabel("Larga, es la ruta donde viajaras por mas ciudades.")
 
-        self.lbl_beta.setText('Modo de viaje')
-        self.lbl_beta.setFixedWidth(110)
+        self.lbl_modo.setText('Modo de viaje')
+        self.lbl_modo.setFixedWidth(110)
         for i in lista2:
-            self.sld_beta.addItem(i)
+            self.sld_modo.addItem(i)
         # self.lbl_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
         # self.sld_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
@@ -77,25 +76,27 @@ class ProjectWindow(QMainWindow):
 
         self.lyt_settings.addWidget(mensaje)
 
-        self.lyt_settings.addWidget(self.lbl_sigma)
-        self.lyt_sigma.addRow(self.sld_sigma)  #, self.lnedt_sigma)
-        self.lyt_settings.addLayout(self.lyt_sigma)
+        self.lyt_settings.addWidget(self.lbl_salida)
+        self.lyt_salida.addRow(self.sld_salida)  #, self.lnedt_sigma)
+        self.lyt_settings.addLayout(self.lyt_salida)
 
-        self.lyt_settings.addWidget(self.lbl_rho)
-        self.lyt_rho.addRow(self.sld_rho)   #, self.lnedt_rho)
-        self.lyt_settings.addLayout(self.lyt_rho)
+        self.lyt_settings.addWidget(self.lbl_destino)
+        self.lyt_destino.addRow(self.sld_destino)   #, self.lnedt_rho)
+        self.lyt_settings.addLayout(self.lyt_destino)
 
         self.lyt_settings.addWidget(descripcion1)
         self.lyt_settings.addWidget(descripcion2)
         self.lyt_settings.addWidget(descripcion3)
 
-        self.lyt_settings.addWidget(self.lbl_beta)
-        self.lyt_beta.addRow(self.sld_beta)    #, self.lnedt_beta)
-        self.lyt_settings.addLayout(self.lyt_beta)
+        self.lyt_settings.addWidget(self.lbl_modo)
+        self.lyt_modo.addRow(self.sld_modo)    #, self.lnedt_beta)
+        self.lyt_settings.addLayout(self.lyt_modo)
 
         self.lyt_settings.addWidget(self.btn_graph)
 
         self.setCentralWidget(self.container)
+
+
 
 
 if __name__ == '__main__':
