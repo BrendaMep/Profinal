@@ -19,6 +19,11 @@ var xalapaIcon = L.icon({
 	iconSize: [18, 31], 
 });
 
+var papantlaIcon = L.icon({
+	iconUrl: 'images/papantla.png',
+	iconSize: [18, 31],
+});
+
 /*function creaIcono(ruta, width, height) {
 	var icono = L.icon({
 		iconUrl: ruta,
@@ -36,10 +41,6 @@ var locations = {
 	'zempoala': {
 		'titulo': 'Zempoala',
 		'coordenadas': [19.44688, -96.40507]
-	},
-	'vega': {
-		'titulo': 'Vega de Alatorre',
-		'coordenadas': [20.03034, -96.65044]
 	},
 	'vega': {
 		'titulo': 'Vega de Alatorre',
@@ -73,7 +74,7 @@ var locations = {
 		'titulo': ' Joachin',
 		'coordenadas': [18.6407, -96.23095]
 	},
-	' minatitlan': {
+	'minatitlan': {
 		'titulo': ' Minatitlan',
 		'coordenadas': [17.99392, -94.5466]
 	},
@@ -87,9 +88,10 @@ var locations = {
 	},
 	' papantla': {
 		'titulo': ' Papantla',
-		'coordenadas': [20.45667, -97.31561]
+		'coordenadas': [20.45667, -97.31561],
+		'icon': papantlaIcon
 	},
-	'tuxtla ': {
+	'tuxtla': {
 		'titulo': ' San Andres Tuxtla',
 		'coordenadas': [18.44412, -95.21302]
 	},
@@ -101,7 +103,7 @@ var locations = {
 		'titulo': ' Teziutlan',
 		'coordenadas': [19.81601, -97.35705]
 	},
-	' alvarado': {
+	'alvarado': {
 		'titulo': ' Alvarado',
 		'coordenadas': [18.76961, -95.75894]
 	},
@@ -109,7 +111,7 @@ var locations = {
 		'titulo': ' Yanga',
 		'coordenadas': [18.82928, -96.80027]
 	},
-	' boca': {
+	'boca': {
 		'titulo': ' Boca del Rio',
 		'coordenadas': [19.10627, -96.10632]
 	}
@@ -128,6 +130,7 @@ function pintaMarker(item) {
 }
 
 // create a red polyline from an array of LatLng points
+
 var ruta1 = [
 	locations.xalapa.coordenadas,
 	locations.zempoala.coordenadas,

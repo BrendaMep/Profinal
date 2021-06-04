@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QHBoxLayout, QVBoxLayout, QFormLayout, QLabel, \
-    QLineEdit, QSlider, QDial, QDoubleSpinBox, QPushButton, QSizePolicy
+    QLineEdit, QSlider, QDial, QDoubleSpinBox, QPushButton
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QSizePolicy
 
@@ -16,6 +16,7 @@ class ProjectWindow(QMainWindow):
 
         self.lyt_x0 = QFormLayout()
         self.lyt_y0 = QFormLayout()
+        self.lyt_z0 = QFormLayout()
 
         self.lbl_x0 = QLabel()
         self.lnedt_x0 = QLineEdit()
@@ -23,37 +24,46 @@ class ProjectWindow(QMainWindow):
         self.lbl_y0 = QLabel()
         self.lnedt_y0 = QLineEdit()
 
+        self.lbl_z0 = QLabel()
+        self.lnedt_z0 = QLineEdit()
+
         self.btn_graph = QPushButton()
-
-
 
         self.setup_ui()
 
     def setup_ui(self):
-        self.setWindowTitle("Proyecto Busquedas")
+        self.setWindowTitle("Final Project")
 
-        self.lbl_x0.setText('Inicio')
+        self.lbl_x0.setText('Origen')
         self.lnedt_x0.setText('A')
         self.lbl_x0.setFixedWidth(50)
         self.lnedt_x0.setFixedWidth(100)
         self.lbl_x0.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         self.lnedt_x0.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
 
-        self.lbl_y0.setText('Final')
+        self.lbl_y0.setText('Destino')
         self.lnedt_y0.setText('B')
         self.lbl_y0.setFixedWidth(50)
         self.lnedt_y0.setFixedWidth(100)
         self.lbl_y0.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         self.lnedt_y0.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
 
+        self.lbl_z0.setText('Ruta')
+        self.lnedt_z0.setText('1')
+        self.lbl_z0.setFixedWidth(50)
+        self.lnedt_z0.setFixedWidth(100)
+        self.lbl_z0.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        self.lnedt_z0.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
 
         self.btn_graph.setText('Trazar ruta')
         self.btn_graph.setFixedWidth(165)
         self.btn_graph.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
 
         # Functionality
+
         self.lyt_x0.addRow(self.lbl_x0, self.lnedt_x0)
         self.lyt_y0.addRow(self.lbl_y0, self.lnedt_y0)
+        self.lyt_z0.addRow(self.lbl_z0, self.lnedt_z0)
 
         self.main_layout.addLayout(self.lyt_settings)
         self.main_layout.addLayout(self.lyt_graph)
@@ -61,8 +71,9 @@ class ProjectWindow(QMainWindow):
 
         self.lyt_settings.addLayout(self.lyt_x0)
         self.lyt_settings.addLayout(self.lyt_y0)
-        self.lyt_settings.addWidget(self.btn_graph)
+        self.lyt_settings.addLayout(self.lyt_z0)
 
+        self.lyt_settings.addWidget(self.btn_graph)
 
         self.setCentralWidget(self.container)
 
