@@ -20,32 +20,31 @@ Y = 'Yanga'
 Z = 'Zempoala'
 
 mapa1 = {
-    'A': ['M', 'S', 'N'],
-    'B': ['Z', 'V', 'J', 'X'],
-    'C': ['M', 'D', 'S'],
-    'D': ['C'],
-    'E': ['O', 'F'],
-    'F': ['Y', 'H', 'E'],
-    'G': ['T', 'P', 'Z', 'X'],
-    'H': ['F', 'X'],
-    'J': ['Y', 'B', 'O'],
-    'M': ['C', 'A'],
-    'N': ['O', 'A'],
-    'O': ['J', 'N', 'V', 'E'],
-    'P': ['T', 'G', 'U'],
-    'S': ['V', 'A', 'C'],
-    'T': ['G', 'P'],
-    'U': ['X', 'P'],
-    'V': ['B', 'S', 'O'],
-    'X': ['Z', 'U', 'B', 'H', 'G'],
-    'Y': ['F', 'J'],
-    'Z': ['B', 'X', 'G']
+    A: [M, S, N],
+    B: [Z, V, J, X],
+    C: [M, D, S],
+    D: [C],
+    E: [O, F],
+    F: [Y, H, E],
+    G: [T, P, Z, X],
+    H: [F, X],
+    J: [Y, B, O],
+    M: [C, A],
+    N: [O, A],
+    O: [J, N, V, E],
+    P: [T, G, U],
+    S: [V, A, C],
+    T: [G, P],
+    U: [X, P],
+    V: [B, S, O],
+    X: [Z, U, B, H, G],
+    Y: [F, J],
+    Z: [B, X, G]
 }
 
 
 def costo(mapa, inicio, final):
     ruta = []
-    ciclo = 0
     while inicio != final:
         vecinos = mapa[inicio]
         ruta.append(inicio)
