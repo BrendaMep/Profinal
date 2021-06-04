@@ -6,6 +6,12 @@ from matplotlib.figure import Figure
 from scipy.integrate import odeint
 import numpy as np
 
+
+lista = ['Acayucan','Boca del Rio','Coatzacualcos','Agua Dulce','Huautla de Jimenez','Fortin Flores',
+         'Vega de Alatorre','Huatusco','Joachin','Minatitlan','Nigromante','Otatitlan','Papantla',
+         'San Andres Tuxtla','Tecolutla','Teziutlan','Alvarado','Xalapa','Yanga','Zempoala']
+lista2 = ['Rapida', 'Bajo', 'Larga']
+
 class ProjectWindow(QMainWindow):
 
     def __init__(self):
@@ -44,12 +50,15 @@ class ProjectWindow(QMainWindow):
 
         self.lbl_sigma.setText('Salida')
         self.lbl_sigma.setFixedWidth(50)
-        self.sld_sigma.addItem("aca")
+        for i in lista:
+            self.sld_sigma.addItem(i)
         #self.lbl_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
         #self.sld_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
         self.lbl_rho.setText('Destino')
         self.lbl_rho.setFixedWidth(65)
+        for i in lista:
+            self.sld_rho.addItem(i)
         # self.lbl_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
         # self.sld_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
@@ -59,6 +68,8 @@ class ProjectWindow(QMainWindow):
 
         self.lbl_beta.setText('Modo de viaje')
         self.lbl_beta.setFixedWidth(110)
+        for i in lista2:
+            self.sld_beta.addItem(i)
         # self.lbl_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
         # self.sld_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
