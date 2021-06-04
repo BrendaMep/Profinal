@@ -1,8 +1,11 @@
-from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QHBoxLayout, QVBoxLayout, QFormLayout, QLabel, \
-    QLineEdit, QSlider, QDial, QDoubleSpinBox, QPushButton
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QSizePolicy
+from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QHBoxLayout, QVBoxLayout, QFormLayout, QLabel, \
+    QLineEdit, QSlider, QDial, QDoubleSpinBox, QPushButton, QSizePolicy, QComboBox
 
+lista = ['Acayucan','Boca del Rio','Coatzacualcos','Agua Dulce','Huautla de Jimenez','Fortin Flores',
+         'Vega de Alatorre','Huatusco','Joachin','Minatitlan','Nigromante','Otatitlan','Papantla',
+         'San Andres Tuxtla','Tecolutla','Teziutlan','Alvarado','Xalapa','Yanga','Zempoala']
+lista2 = ['Rapida', 'Bajo', 'Larga']
 
 class ProjectWindow(QMainWindow):
 
@@ -14,69 +17,85 @@ class ProjectWindow(QMainWindow):
         self.lyt_settings = QVBoxLayout()
         self.lyt_graph = QHBoxLayout()
 
-        self.lyt_x0 = QFormLayout()
-        self.lyt_y0 = QFormLayout()
-        self.lyt_z0 = QFormLayout()
 
-        self.lbl_x0 = QLabel()
-        self.lnedt_x0 = QLineEdit()
+        self.lyt_sigma = QFormLayout()
+        self.lyt_rho = QFormLayout()
+        self.lyt_beta = QFormLayout()
 
-        self.lbl_y0 = QLabel()
-        self.lnedt_y0 = QLineEdit()
+        self.lbl_sigma = QLabel()
+        self.sld_sigma = QComboBox()
+        #self.lnedt_sigma = QLineEdit()
 
-        self.lbl_z0 = QLabel()
-        self.lnedt_z0 = QLineEdit()
+        self.lbl_rho = QLabel()
+        self.sld_rho = QComboBox()
+        #self.lnedt_rho = QLineEdit()
+
+        self.lbl_beta = QLabel()
+        self.sld_beta = QComboBox()
+        #self.lnedt_beta = QLineEdit()
 
         self.btn_graph = QPushButton()
+
 
         self.setup_ui()
 
     def setup_ui(self):
-        self.setWindowTitle("Final Project")
+        self.setWindowTitle('Viaje')
+        mensaje = QLabel("Bienvenido")
 
-        self.lbl_x0.setText('Origen')
-        self.lnedt_x0.setText('A')
-        self.lbl_x0.setFixedWidth(50)
-        self.lnedt_x0.setFixedWidth(100)
-        self.lbl_x0.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        self.lnedt_x0.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        self.lbl_sigma.setText('Salida')
+        self.lbl_sigma.setFixedWidth(50)
+        for i in lista:
+            self.sld_sigma.addItem(i)
+        self.lbl_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        #self.sld_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
-        self.lbl_y0.setText('Destino')
-        self.lnedt_y0.setText('B')
-        self.lbl_y0.setFixedWidth(50)
-        self.lnedt_y0.setFixedWidth(100)
-        self.lbl_y0.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        self.lnedt_y0.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        self.lbl_rho.setText('Destino')
+        self.lbl_rho.setFixedWidth(65)
+        for i in lista:
+            self.sld_rho.addItem(i)
+        # self.lbl_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        # self.sld_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
-        self.lbl_z0.setText('Ruta')
-        self.lnedt_z0.setText('1')
-        self.lbl_z0.setFixedWidth(50)
-        self.lnedt_z0.setFixedWidth(100)
-        self.lbl_z0.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        self.lnedt_z0.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        descripcion1 = QLabel("Rapida, es la ruta mas corta de llegar al destino.")
+        descripcion2 = QLabel("Bajo, es la ruta con menos costo.")
+        descripcion3 = QLabel("Larga, es la ruta donde viajaras por mas ciudades.")
+
+        self.lbl_beta.setText('Modo de viaje')
+        self.lbl_beta.setFixedWidth(110)
+        for i in lista2:
+            self.sld_beta.addItem(i)
+        # self.lbl_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        # self.sld_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
         self.btn_graph.setText('Trazar ruta')
-        self.btn_graph.setFixedWidth(165)
-        self.btn_graph.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        self.btn_graph.setFixedWidth(105)
 
-        # Functionality
-
-        self.lyt_x0.addRow(self.lbl_x0, self.lnedt_x0)
-        self.lyt_y0.addRow(self.lbl_y0, self.lnedt_y0)
-        self.lyt_z0.addRow(self.lbl_z0, self.lnedt_z0)
-
-        self.main_layout.addLayout(self.lyt_settings)
+        self.main_layout.addLayout(self.lyt_settings) # objetos que conforman la interfaz
         self.main_layout.addLayout(self.lyt_graph)
         self.container.setLayout(self.main_layout)
 
-        self.lyt_settings.addLayout(self.lyt_x0)
-        self.lyt_settings.addLayout(self.lyt_y0)
-        self.lyt_settings.addLayout(self.lyt_z0)
+        self.lyt_settings.addWidget(mensaje)
+
+        self.lyt_settings.addWidget(self.lbl_sigma)
+        self.lyt_sigma.addRow(self.sld_sigma)  #, self.lnedt_sigma)
+        self.lyt_settings.addLayout(self.lyt_sigma)
+
+        self.lyt_settings.addWidget(self.lbl_rho)
+        self.lyt_rho.addRow(self.sld_rho)   #, self.lnedt_rho)
+        self.lyt_settings.addLayout(self.lyt_rho)
+
+        self.lyt_settings.addWidget(descripcion1)
+        self.lyt_settings.addWidget(descripcion2)
+        self.lyt_settings.addWidget(descripcion3)
+
+        self.lyt_settings.addWidget(self.lbl_beta)
+        self.lyt_beta.addRow(self.sld_beta)
+        self.lyt_settings.addLayout(self.lyt_beta)
 
         self.lyt_settings.addWidget(self.btn_graph)
 
         self.setCentralWidget(self.container)
-
 
 
 if __name__ == '__main__':
@@ -84,3 +103,5 @@ if __name__ == '__main__':
     window = ProjectWindow()
     window.show()
     app.exec_()
+
+
