@@ -69,7 +69,7 @@ def costo(mapa, inicio, final):
                 del mapa[inicio]
                 inicio = ruta[len(ruta) -1]
                 ruta.remove(inicio)
-X = costo(mapa1, A,B)
-print(X)
+
+
 
 
