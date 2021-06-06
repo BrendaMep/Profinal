@@ -2,6 +2,7 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtWebEngineWidgets import *
 from PyQt5.QtCore import *
+from otraprueba import f #aqui se puede cambiar el nombre del archivo py para que se vea bonito y no se quede asi
 import os
 
 lista = ['Acayucan','Boca del Rio','Coatzacualcos','Agua Dulce','Huautla de Jimenez','Fortin Flores',
@@ -47,6 +48,7 @@ class ProjectWindow(QMainWindow):
         #self.lnedt_beta = QLineEdit()
 
         self.btn_graph = QPushButton()
+        self.lbl_rut = QLabel()
 
         # graficas
 
@@ -76,10 +78,7 @@ class ProjectWindow(QMainWindow):
         #mapa de html
         self.html_view = QWebEngineView()
         self.lyt_graph.addWidget(self.html_view)
-
         self.html_view.load(QUrl.fromLocalFile(os.path.abspath('index.html')))
-
-
 
         self.lbl_modo.setText('Modo de viaje')
         self.lbl_modo.setFixedWidth(110)
@@ -113,21 +112,17 @@ class ProjectWindow(QMainWindow):
         self.lyt_settings.addLayout(self.lyt_modo)
 
         self.lyt_settings.addWidget(self.btn_graph)
+        self.lyt_settings.addWidget(self.lbl_rut)
 
-
-
-
-
-
-
-
-
+        self.btn_graph.clicked.connect(self.pressed)
 
         self.setCentralWidget(self.container)
-
-
-
-
+    def pressed(self):
+        ori = self.sld_salida.currentText()
+        dest = self.sld_destino.currentText()
+        tipode = self.sld_modo.currentText()
+        print(f(ori,dest,tipode))
+        self.lbl_rut.setText(str(f(ori,dest,tipode)))
 
 
 if __name__ == '__main__':
@@ -135,6 +130,3 @@ if __name__ == '__main__':
     window = ProjectWindow()
     window.show()
     app.exec_()
-
-
-
