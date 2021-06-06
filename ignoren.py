@@ -2,6 +2,29 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QHBoxLayout, QVBoxLayout, QFormLayout, QLabel, \
     QLineEdit, QSlider, QDial, QDoubleSpinBox, QPushButton, QSizePolicy, QComboBox
 
+from uniforme import costo, mapa1
+
+A = 'Acayucan'
+B = 'Boca'
+C = 'Coatzacualcos'
+D = 'Agua'
+E = 'Huautla'
+F = 'Fortin'
+G = 'Vega'
+H = 'Huatusco'
+J = 'Joachin'
+M = 'Minatitlan'
+N = 'Nigro'
+O = 'Otatitlan'
+P = 'Papantla'
+S = 'Tuxtla'
+T = 'Tecolutla'
+U = 'Teziutlan'
+V = 'Alvarado'
+X = 'Xalapa'
+Y = 'Yanga'
+Z = 'Zempoala'
+
 lista = ['Acayucan','Boca del Rio','Coatzacualcos','Agua Dulce','Huautla de Jimenez','Fortin Flores',
          'Vega de Alatorre','Huatusco','Joachin','Minatitlan','Nigromante','Otatitlan','Papantla',
          'San Andres Tuxtla','Tecolutla','Teziutlan','Alvarado','Xalapa','Yanga','Zempoala']
@@ -97,9 +120,7 @@ class ProjectWindow(QMainWindow):
 
         self.setCentralWidget(self.container)
 
-        def f(self, condition, t):
-            inicio = self.lbl_sigma.Text()
-            salida = self.lbl_rho.Text()
+
 if __name__ == '__main__':
     app = QApplication([])
     window = ProjectWindow()
