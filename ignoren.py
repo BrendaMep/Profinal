@@ -1,23 +1,17 @@
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QHBoxLayout, QVBoxLayout, QFormLayout, QLabel, \
-    QLineEdit, QSlider, QDial, QDoubleSpinBox, QPushButton, QSizePolicy, QComboBox
-
-from uniforme import costo, mapa1
-
 A = 'Acayucan'
-B = 'Boca'
+B = 'Boca del Rio'
 C = 'Coatzacualcos'
-D = 'Agua'
-E = 'Huautla'
-F = 'Fortin'
-G = 'Vega'
+D = 'Agua Dulce'
+E = 'Huautla de Jimenez'
+F = 'Fortin Flores'
+G = 'Vega de Alatorre'
 H = 'Huatusco'
 J = 'Joachin'
 M = 'Minatitlan'
-N = 'Nigro'
+N = 'Nigromante'
 O = 'Otatitlan'
 P = 'Papantla'
-S = 'Tuxtla'
+S = 'San Andres Tuxtla'
 T = 'Tecolutla'
 U = 'Teziutlan'
 V = 'Alvarado'
@@ -25,106 +19,70 @@ X = 'Xalapa'
 Y = 'Yanga'
 Z = 'Zempoala'
 
-lista = ['Acayucan','Boca del Rio','Coatzacualcos','Agua Dulce','Huautla de Jimenez','Fortin Flores',
-         'Vega de Alatorre','Huatusco','Joachin','Minatitlan','Nigromante','Otatitlan','Papantla',
-         'San Andres Tuxtla','Tecolutla','Teziutlan','Alvarado','Xalapa','Yanga','Zempoala']
-lista2 = ['Rapida', 'Bajo', 'Larga']
+# ciudades vecinas de cada una de las ciudades
+ciudades = [A,B,C,D,E,F,G,H,J,M,N,O,P,S,T,U,V,X,Y,Z]
 
-class ProjectWindow(QMainWindow):
+mapa1 = {
+    A: [M, S, N],
+    B: [Z, V, J, X],
+    C: [M, D, S],
+    D: [C],
+    E: [O, F],
+    F: [Y, H, E],
+    G: [T, P, Z, X],
+    H: [F, X],
+    J: [Y, B, O],
+    M: [C, A],
+    N: [O, A],
+    O: [J, N, V, E],
+    P: [T, G, U],
+    S: [V, A, C],
+    T: [G, P],
+    U: [X, P],
+    V: [B, S, O],
+    X: [Z, U, B, H, G],
+    Y: [F, J],
+    Z: [B, X, G]
+}
 
-    def __init__(self):
-        super().__init__()
-        self.container = QWidget()
-
-        self.main_layout = QHBoxLayout()
-        self.lyt_settings = QVBoxLayout()
-        self.lyt_graph = QHBoxLayout()
-
-
-        self.lyt_sigma = QFormLayout()
-        self.lyt_rho = QFormLayout()
-        self.lyt_beta = QFormLayout()
-
-        self.lbl_sigma = QLabel()
-        self.sld_sigma = QComboBox()
-        #self.lnedt_sigma = QLineEdit()
-
-        self.lbl_rho = QLabel()
-        self.sld_rho = QComboBox()
-        #self.lnedt_rho = QLineEdit()
-
-        self.lbl_beta = QLabel()
-        self.sld_beta = QComboBox()
-        #self.lnedt_beta = QLineEdit()
-
-        self.btn_graph = QPushButton()
+def cam(palabra):
+    for i in range(20):
+        if palabra == ciudades[i]:
+            m = ciudades[i]
+            return m
 
 
-        self.setup_ui()
 
-    def setup_ui(self):
-        self.setWindowTitle('Viaje')
-        mensaje = QLabel("Bienvenido")
-
-        self.lbl_sigma.setText('Salida')
-        self.lbl_sigma.setFixedWidth(50)
-        for i in lista:
-            self.sld_sigma.addItem(i)
-        self.lbl_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
-        #self.sld_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
-
-        self.lbl_rho.setText('Destino')
-        self.lbl_rho.setFixedWidth(65)
-        for i in lista:
-            self.sld_rho.addItem(i)
-        # self.lbl_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
-        # self.sld_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
-
-        descripcion1 = QLabel("Rapida, es la ruta mas corta de llegar al destino.")
-        descripcion2 = QLabel("Bajo, es la ruta con menos costo.")
-        descripcion3 = QLabel("Larga, es la ruta donde viajaras por mas ciudades.")
-
-        self.lbl_beta.setText('Modo de viaje')
-        self.lbl_beta.setFixedWidth(110)
-        for i in lista2:
-            self.sld_beta.addItem(i)
-        # self.lbl_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
-        # self.sld_sigma.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
-
-        self.btn_graph.setText('Trazar ruta')
-        self.btn_graph.setFixedWidth(105)
-
-        self.main_layout.addLayout(self.lyt_settings) # objetos que conforman la interfaz
-        self.main_layout.addLayout(self.lyt_graph)
-        self.container.setLayout(self.main_layout)
-
-        self.lyt_settings.addWidget(mensaje)
-
-        self.lyt_settings.addWidget(self.lbl_sigma)
-        self.lyt_sigma.addRow(self.sld_sigma)  #, self.lnedt_sigma)
-        self.lyt_settings.addLayout(self.lyt_sigma)
-
-        self.lyt_settings.addWidget(self.lbl_rho)
-        self.lyt_rho.addRow(self.sld_rho)   #, self.lnedt_rho)
-        self.lyt_settings.addLayout(self.lyt_rho)
-
-        self.lyt_settings.addWidget(descripcion1)
-        self.lyt_settings.addWidget(descripcion2)
-        self.lyt_settings.addWidget(descripcion3)
-
-        self.lyt_settings.addWidget(self.lbl_beta)
-        self.lyt_beta.addRow(self.sld_beta)
-        self.lyt_settings.addLayout(self.lyt_beta)
-
-        self.lyt_settings.addWidget(self.btn_graph)
-
-        self.setCentralWidget(self.container)
+def costo(mapa, inicio, final):
+    inicio = cam(inicio)
+    final = cam(final)
+    ruta = []
+    while inicio != final:
+        vecinos = mapa[inicio]
+        ruta.append(inicio)
+        vecinos2 = list()
+        if final in vecinos:
+            inicio = final
+            ruta.append(final)
+            return ruta
+        else:
+            for ciudad in vecinos:
+                if ciudad not in ruta:
+                    vecinos2.append(ciudad)
+            if len(vecinos2) != 0:
+                inicio = vecinos2[0]
+            else:
+                inicio = ruta[len(ruta) - 1]
+                ruta.remove(inicio)
+                for ciudades in mapa:
+                    if inicio in mapa[ciudades]:
+                        mapa[ciudades].remove(inicio)
+                del mapa[inicio]
+                inicio = ruta[len(ruta) - 1]
+                ruta.remove(inicio)
 
 
-if __name__ == '__main__':
-    app = QApplication([])
-    window = ProjectWindow()
-    window.show()
-    app.exec_()
 
-
+#x = costo(mapa1, A,B)
+#x = costo(mapa1, 'Acayucan','Boca del Rio')
+#print(x)
