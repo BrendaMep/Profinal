@@ -238,7 +238,7 @@ function pintaMarker(item) {
 
 // create a red polyline from an array of LatLng points
 
-var ciudades = ['Xalapa','zempoala','boca','alvarado','tuxtla'];
+var ciudades = ['Xalapa','Zempoala','Boca','Alvarado','Tuxtla'];
 var ruta1 = [];
 function cordenada(ciudad){
 	return locations[ciudad].coordenadas;
