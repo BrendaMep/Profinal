@@ -121,6 +121,8 @@ class ProjectWindow(QMainWindow):
         ori = self.sld_salida.currentText()
         dest = self.sld_destino.currentText()
         tipode = self.sld_modo.currentText()
+        #s = self.sld_salida.currentIndexChanged()
+        #print(s)
         print(f(ori,dest,tipode))
         self.lbl_rut.setText(str(f(ori,dest,tipode)))
 
