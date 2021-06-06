@@ -2,16 +2,8 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtWebEngineWidgets import *
 from PyQt5.QtCore import *
+from otraprueba import f #aqui se puede cambiar el nombre del archivo py para que se vea bonito y no se quede asi
 import os
-from amplitud import fcn_amplitud
-from uniforme import costo
-from BusquedasProfundidad import profundidad
-from uniforme import mapa1
-from mapa2 import mapa
-from mapa2 import ciudades
-
-
-
 
 lista = ['Acayucan','Boca del Rio','Coatzacualcos','Agua Dulce','Huautla de Jimenez','Fortin Flores',
          'Vega de Alatorre','Huatusco','Joachin','Minatitlan','Nigromante','Otatitlan','Papantla',
@@ -56,6 +48,7 @@ class ProjectWindow(QMainWindow):
         #self.lnedt_beta = QLineEdit()
 
         self.btn_graph = QPushButton()
+        self.lbl_rut = QLabel()
 
         # graficas
 
@@ -85,10 +78,7 @@ class ProjectWindow(QMainWindow):
         #mapa de html
         self.html_view = QWebEngineView()
         self.lyt_graph.addWidget(self.html_view)
-
         self.html_view.load(QUrl.fromLocalFile(os.path.abspath('index.html')))
-
-
 
         self.lbl_modo.setText('Modo de viaje')
         self.lbl_modo.setFixedWidth(110)
@@ -98,12 +88,6 @@ class ProjectWindow(QMainWindow):
 
         self.btn_graph.setText('Trazar ruta')
         self.btn_graph.setFixedWidth(105)
-
-        #funcion
-
-        self.sld_salida.currentIndexChanged.connect( self.index_changed)
-        self.sld_destino.currentIndexChanged.connect(self.index_changed)
-        self.sld_modo.currentIndexChanged.connect(self.index_changed)
 
         self.main_layout.addLayout(self.lyt_settings) # objetos que conforman la interfaz
         self.main_layout.addLayout(self.lyt_graph)
@@ -128,33 +112,23 @@ class ProjectWindow(QMainWindow):
         self.lyt_settings.addLayout(self.lyt_modo)
 
         self.lyt_settings.addWidget(self.btn_graph)
+        self.lyt_settings.addWidget(self.lbl_rut)
 
+        self.btn_graph.clicked.connect(self.pressed)
 
         self.setCentralWidget(self.container)
+    def pressed(self):
+        ori = self.sld_salida.currentText()
+        dest = self.sld_destino.currentText()
+        tipode = self.sld_modo.currentText()
+        #s = self.sld_salida.currentIndexChanged()
+        #print(s)
+        print(f(ori,dest,tipode))
+        self.lbl_rut.setText(str(f(ori,dest,tipode)))
 
-    def fi(self, mapa):
-        if self.sld_modo == 'Rapida':
-            recor = fcn_amplitud(ciudades, mapa, self.sld_salida.itemText(), self.sld_destino.itemText())
-            return recor
-            # if modo == 'Bajo':
-            # recor = costo(mapa1,inicio,fin)
-        else:
-            recor = profundidad(mapa, self.sld_salida.itemText(), self.sld_destino.itemText())
-            return recor
-
-    def index_changed(self):
-        print(self.sld_salida.itemDelegate())
-        print(self.sld_destino.itemDelegate())
-        print(self.sld_modo.itemDelegate())
-
-        m =
-        print(m)
 
 if __name__ == '__main__':
     app = QApplication([])     # funcion principal
     window = ProjectWindow()
     window.show()
     app.exec_()
-
-
-
