@@ -8,7 +8,7 @@ import os
 lista = ['Acayucan','Boca del Rio','Coatzacualcos','Agua Dulce','Huautla de Jimenez','Fortin Flores',
          'Vega de Alatorre','Huatusco','Joachin','Minatitlan','Nigromante','Otatitlan','Papantla',
          'San Andres Tuxtla','Tecolutla','Teziutlan','Alvarado','Xalapa','Yanga','Zempoala']
-lista2 = ['Rapida', 'Bajo', 'Larga']
+lista2 = ['Uniforme', 'Costo', 'Profundidad']
 
 class ProjectWindow(QMainWindow):
 
@@ -70,9 +70,9 @@ class ProjectWindow(QMainWindow):
         self.lbl_destino.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
         self.sld_destino.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
-        self.descripcion1 = QLabel("Rapida, es la ruta mas corta de llegar al destino.")
-        self.descripcion2 = QLabel("Bajo, es la ruta con menos costo.")
-        self.descripcion3 = QLabel("Larga, es la ruta donde viajaras por mas ciudades.")
+        self.descripcion1 = QLabel("Uniforme, es la ruta mas corta de llegar al destino.")
+        self.descripcion2 = QLabel("Costo, es la ruta con menos costo.")
+        self.descripcion3 = QLabel("Uniforme, solo te da una ruta para llegar al destino.")
 
 
         #mapa de html
