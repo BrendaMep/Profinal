@@ -1,7 +1,8 @@
 from amplitud import fcn_amplitud
-from uniforme import costo
+#from uniforme import costo
+from ignoren import costo
 from BusquedasProfundidad import profundidad
-from uniforme import mapa1
+from ignoren import mapa1
 from mapa2 import mapa
 from mapa2 import ciudades
 from PyQt5.QtCore import Qt
@@ -34,25 +35,24 @@ Z = 'Zempoala'
 lista = ['Acayucan', 'Boca del Rio', 'Coatzacualcos', 'Agua Dulce', 'Huautla de Jimenez', 'Fortin Flores',
          'Vega de Alatorre', 'Huatusco', 'Joachin', 'Minatitlan', 'Nigromante', 'Otatitlan', 'Papantla',
          'San Andres Tuxtla', 'Tecolutla', 'Teziutlan', 'Alvarado', 'Xalapa', 'Yanga', 'Zempoala']
-lista2 = ['Rapida', 'Bajo', 'Larga']
+lista2 = ['Uniforme', 'Costo', 'Profundidad']
 
-
-
-
-
-
-
-
+def cam(palabra):
+    for i in range(20):
+        if palabra == ciudades[i]:
+            m = ciudades[i]
+            return m
 
 
 def f(inicio, fin, modo):
-    if modo== 'Rapida':
+    if modo == 'Uniforme':
         recor = fcn_amplitud(ciudades, mapa, inicio, fin)
         return recor
-        # if modo == 'Bajo':
-        # recor = costo(mapa1,inicio,fin)
     else:
-        recor = profundidad(mapa, inicio, fin)
-        return recor
-
+        if modo == 'Costo':
+            recor = costo(mapa1, inicio, fin)
+            return recor
+        else:
+            recor = profundidad(mapa, inicio, fin)
+            return recor
 
