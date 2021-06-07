@@ -132,7 +132,7 @@ var locations = {
 		'coordenadas': [19.44688, -96.40507],
 		'icon': zempoIcon
 	},
-	'Vega': {
+	'Vega de Alatorre': {
 		'titulo': 'Vega de Alatorre',
 		'coordenadas': [20.03034, -96.65044],
 		'icon': vegaIcon
@@ -147,17 +147,17 @@ var locations = {
 		'coordenadas': [18.13447, -94.45898],
 		'icon': coatzaIcon
 	},
-	'Agua': {
+	'Agua Dulce': {
 		'titulo': 'Agua Dulce',
 		'coordenadas': [18.14259, -94.1436],
 		'icon': aguaIcon
 	},
-	'Huautla': {
+	'Huautla de Jimenez': {
 		'titulo': 'Huautla de Jiménez',
 		'coordenadas': [18.13108, -96.84314],
 		'icon':huautlaIcon
 	},
-	'Fortin ': {
+	'Fortin Flores': {
 		'titulo': 'Fortin de las Flores ',
 		'coordenadas': [18.9017, -96.99896],
 		'icon': fortinIcon
@@ -177,7 +177,7 @@ var locations = {
 		'coordenadas': [17.99392, -94.5466],
 		'icon': minaIcon
 	},
-	'Nigro ': {
+	'Nigromante': {
 		'titulo': ' El Nigromante',
 		'coordenadas': [17.76323, -95.75574],
 		'icon': nigroIcon
@@ -192,7 +192,7 @@ var locations = {
 		'coordenadas': [20.45667, -97.31561],
 		'icon': papantlaIcon
 	},
-	'Tuxtla': {
+	'San Andres Tuxtla': {
 		'titulo': ' San Andres Tuxtla',
 		'coordenadas': [18.44412, -95.21302],
 		'icon': tuxIcon
@@ -217,7 +217,7 @@ var locations = {
 		'coordenadas': [18.82928, -96.80027],
 		'icon': yangaIcon
 	},
-	'Boca': {
+	'Boca del Rio': {
 		'titulo': ' Boca del Rio',
 		'coordenadas': [19.10627, -96.10632],
 		'icon': bocaIcon
@@ -238,7 +238,9 @@ function pintaMarker(item) {
 
 // create a red polyline from an array of LatLng points
 
-var ciudades = ['Xalapa','Zempoala','Boca','Alvarado','Tuxtla'];
+var ciudades = ['Agua Dulce','Coatzacualcos','San Andres Tuxtla','Alvarado', 'Boca del Rio', 'Zempoala',
+	'Vega de Alatorre', 'Tecolutla', 'Papantla', 'Teziutlan', 'Xalapa','Huatusco', 'Fortin Flores',
+	'Huautla de Jimenez', 'Otatitlan', 'Nigromante', 'Acayucan', 'Minatitlan', 'Coatzacualcos'];
 var ruta1 = [];
 function cordenada(ciudad){
 	return locations[ciudad].coordenadas;
@@ -248,5 +250,59 @@ for(let i of ciudades){
 	ruta1.push(cordenada(i))
 }
 
+
+
+var ciud = ['Papantla', 'Vega de Alatorre', 'Xalapa', 'Boca del Rio', 'Joachin', 'Otatitlan', 'Alvarado'];
+var ruta2 = [];
+function cordenada(ciudad){
+	return locations[ciudad].coordenadas;
+}
+
+for(let i of ciud){
+	ruta2.push(cordenada(i))
+}
+var ciud3 = ['Xalapa','Zempoala'];
+var ruta3 = [];
+function cordenada(ciudad){
+	return locations[ciudad].coordenadas;
+}
+
+for(let i of ciud3){
+	ruta3.push(cordenada(i))
+}
+
+
+
+var ciud4 = ['Fortin Flores','Yanga', 'Joachin'];
+var ruta4 = [];
+function cordenada(ciudad){
+	return locations[ciudad].coordenadas;
+}
+
+for(let i of ciud4){
+	ruta4.push(cordenada(i))
+}
+
+
+
+var ciud5 = ['San Andres Tuxtla','Acayucan'];
+var ruta5 = [];
+function cordenada(ciudad){
+	return locations[ciudad].coordenadas;
+}
+
+for(let i of ciud5){
+	ruta5.push(cordenada(i))
+}
+
+
+
+
+
 var polyline = L.polyline(ruta1, {color: 'red'}).addTo(mymap);
+var polyline = L.polyline(ruta2, {color: 'red'}).addTo(mymap);
+var polyline = L.polyline(ruta3, {color: 'red'}).addTo(mymap);
+var polyline = L.polyline(ruta4, {color: 'red'}).addTo(mymap);
+var polyline = L.polyline(ruta5, {color: 'red'}).addTo(mymap);
+
 console.log(mymap.distance(locations.Xalapa.coordenadas, locations.Zempoala.coordenadas) + ' metros');
