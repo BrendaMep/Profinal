@@ -8,7 +8,7 @@ import os
 lista = ['Acayucan','Boca del Rio','Coatzacualcos','Agua Dulce','Huautla de Jimenez','Fortin Flores',
          'Vega de Alatorre','Huatusco','Joachin','Minatitlan','Nigromante','Otatitlan','Papantla',
          'San Andres Tuxtla','Tecolutla','Teziutlan','Alvarado','Xalapa','Yanga','Zempoala']
-lista2 = ['Uniforme', 'Costo', 'Profundidad']
+lista2 = ['Amplitud', 'Costo', 'Profundidad']
 
 class ProjectWindow(QMainWindow):
 
@@ -70,7 +70,7 @@ class ProjectWindow(QMainWindow):
         self.lbl_destino.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
         self.sld_destino.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
-        self.descripcion1 = QLabel("Uniforme, es la ruta mas corta de llegar al destino.")
+        self.descripcion1 = QLabel("Amplitud, es la ruta mas corta de llegar al destino.")
         self.descripcion2 = QLabel("Costo, es la ruta con menos costo.")
         self.descripcion3 = QLabel("Uniforme, solo te da una ruta para llegar al destino.")
 
