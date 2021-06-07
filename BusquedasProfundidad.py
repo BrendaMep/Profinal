@@ -32,6 +32,9 @@ def ruta(recor):
     rut.append(recor[x-1][0])
     rut.append(recor[x-1][1])
     m = len(rut)
+    if m == x:
+        rut.reverse()
+        return rut
     while m < x:
         for i in range(x):
             j = len(rut) - 1
@@ -71,4 +74,6 @@ def profundidad(mapa, inicio, destino):
                     if acceso == 0:
                         arbol.append(vecino)
                         recorrido.append([vecino, ciudad])
-#print(profundidad(mapa,A,C))
+
+x = profundidad(mapa, A, M)
+print(x)
