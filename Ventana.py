@@ -86,7 +86,7 @@ class ProjectWindow(QMainWindow):
         self.lbl_modo.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
         self.sld_modo.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
-        self.btn_graph.setText('Trazar ruta')
+        self.btn_graph.setText('Ruta')
         self.btn_graph.setFixedWidth(105)
 
         self.main_layout.addLayout(self.lyt_settings) # objetos que conforman la interfaz
