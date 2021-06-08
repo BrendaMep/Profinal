@@ -43,4 +43,4 @@ Si en dado momento ya no hay más vecinos para avanzar, regresamos a la ciudad i
 primera, tanto de la ruta como del mapa (pues no nos lleva a nada), continuamos desde dicho punto.
 
 La función profundidad, opera de la misma manera que la función costo, con la excepción de que al momento de elegir
-un vecino, se escoge al que mayor costo de viaje tenga.
+un vecino, se escoge el que se encuentra más profundo,en este caso al que mayor costo de viaje tenga.
