@@ -13,15 +13,17 @@ búsquedas a ciegas, esto último debido a que no tienen información suficiente
 La información requerida se reduce a las ciudades, el costo de posibles movimientos y los canales de comunicación. 
 Con esta información se crean las rutas.
 
+![Mapa utilizado]()
+
 La ventana principal está dividida en dos partes, en el lado izquierdo se encuentran las opciones a seleccionar,
 las cuales están en un *Qcombox*. 
 
 Primero se selecciona la salida, luego el pueblo al que deseamos visitar, posteriormente se encuentra una pequeña 
 descripción de las formas de viajar, es decir, loas rutas dadas por los métodos de búsqueda citados arriba.
 
-En la opción *amplitud* lo que se tiene es el recorrido más rápido.
-En la opción costo nos da la ruta con menor gasto.
-Por último en la opción de profundidad, en este caso es una ruta más larga, si es que se desea pasar por más ciudades.
+* En la opción *amplitud* lo que se tiene es el recorrido más rápido.
+* En la opción costo nos da la ruta con menor gasto.
+* Por último en la opción de profundidad, en este caso es una ruta más larga, si es que se desea pasar por más ciudades.
 
 Una vez seleccionado estas opciones, con el botón de ruta en la parte inferior nos dara una lista donde nos indicara 
 por cuáles ciudades debemos ir para llegar a nuestro destino.
