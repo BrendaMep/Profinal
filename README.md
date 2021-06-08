@@ -13,7 +13,7 @@ búsquedas a ciegas, esto último debido a que no tienen información suficiente
 La información requerida se reduce a las ciudades, el costo de posibles movimientos y los canales de comunicación. 
 Con esta información se crean las rutas.
 
-![Mapa utilizado]()
+![Mapa utilizado](https://raw.githubusercontent.com/BrendaMep/Profinal/main/images/map.png?token=AS4OYZR7XISEWYDBL7DGHBLAX7AVI)
 
 La ventana principal está dividida en dos partes, en el lado izquierdo se encuentran las opciones a seleccionar,
 las cuales están en un *Qcombox*. 
