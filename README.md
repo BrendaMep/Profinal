@@ -13,7 +13,7 @@ búsquedas a ciegas, esto último debido a que no tienen información suficiente
 La información requerida se reduce a las ciudades, el costo de posibles movimientos y los canales de comunicación. 
 Con esta información se crean las rutas.
 
-![map](file:///home/lalo/PycharmProjects/Profinal/images/map.png)
+![](images/map.png)
 
 La ventana principal está dividida en dos partes, en el lado izquierdo se encuentran las opciones a seleccionar,
 las cuales están en un *Qcombox*. 
@@ -31,7 +31,7 @@ por cuáles ciudades debemos ir para llegar a nuestro destino.
 En el apartado derecho se muestra un mapa, donde están localizadas cada ciudad y los caminos que existen entre dichas
 ciudades.
 
-![Interfaz](file:///home/lalo/PycharmProjects/Profinal/images/interfaz.jpeg)
+![](/images/interfaz.jpeg)
 
 La función de amplitud lo que hace es una vez que tiene la salida y el destino, para la salida se buscaran las ciudades
 vecinas y a partir de ellos se iran extendiendo los nodos de manera horizontal, sin repetir ciudades que ya se
