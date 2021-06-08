@@ -31,7 +31,7 @@ por cuáles ciudades debemos ir para llegar a nuestro destino.
 En el apartado derecho se muestra un mapa, donde están localizadas cada ciudad y los caminos que existen entre dichas
 ciudades.
 
-![](/images/interfaz.jpeg)
+![](images/interfaz.jpeg)
 
 La función de amplitud lo que hace es una vez que tiene la salida y el destino, para la salida se buscaran las ciudades
 vecinas y a partir de ellos se iran extendiendo los nodos de manera horizontal, sin repetir ciudades que ya se
