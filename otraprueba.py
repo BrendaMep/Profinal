@@ -35,7 +35,7 @@ Z = 'Zempoala'
 lista = ['Acayucan', 'Boca del Rio', 'Coatzacualcos', 'Agua Dulce', 'Huautla de Jimenez', 'Fortin Flores',
          'Vega de Alatorre', 'Huatusco', 'Joachin', 'Minatitlan', 'Nigromante', 'Otatitlan', 'Papantla',
          'San Andres Tuxtla', 'Tecolutla', 'Teziutlan', 'Alvarado', 'Xalapa', 'Yanga', 'Zempoala']
-lista2 = ['Aplitud', 'Costo', 'Profundidad']
+lista2 = ['Amplitud', 'Costo', 'Profundidad']
 
 def cam(palabra):
     for i in range(20):
@@ -45,7 +45,7 @@ def cam(palabra):
 
 
 def f(inicio, fin, modo):
-    if modo == 'Ampliud':
+    if modo == 'Amplitud':
         recor = fcn_amplitud(ciudades, mapa, inicio, fin)
         return recor
     else:
@@ -56,3 +56,9 @@ def f(inicio, fin, modo):
             recor = profundidad(mapa, inicio, fin)
             return recor
 
+#m = f(A,B,'Amplitud')
+#print(m)
+#n = f(A,B,'Costo')
+#print(n)
+#s = f(A,B,'Profundidad')
+#print(s)

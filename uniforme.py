@@ -71,3 +71,5 @@ def costo(mapa, inicio, final):
 
 
 
+#x = costo(mapa1, A,B)
+#print(x)

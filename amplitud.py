@@ -74,3 +74,6 @@ def fcn_amplitud(ciudades, mapa, origen, destino):
                     arbol.append(vecino)
                     nodo = [vecino, ciudad]
                     recorrido.append(nodo)
+
+#x = fcn_amplitud(ciudades_ej, mapa_ej, A, B)
+#print(x)
